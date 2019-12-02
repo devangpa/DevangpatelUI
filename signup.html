@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+
+<body style="background-color:whitesmoke;">
+    <div style="background-color:cadetblue; margin-top: auto;">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html" style="color: floralwhite;">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./login.html" style="color: floralwhite;">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./signup.html" style="color: floralwhite;">Signup</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="container" style="text-align: center; margin-top: 30px;">
+        <h2>Sign up</h2>
+
+    </div>
+    <hr>
+    <div class="container" style="align-items: center; margin-top: 10px; margin-right:-300px;">
+        <form style="height: 250px; width: 250px; align-items: center;">
+            <div class="form-group">
+                <label for="exampleInputEmail1" style="text-justify:auto; margin-left: 95px; font-family: 'Times New Roman', Times, serif; font-weight: bolder;">Username</label>
+                <input type="Text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="UserName">
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" style="text-justify:auto; margin-left: 95px; font-family: 'Times New Roman', Times, serif; font-weight: bolder;">Email</label>
+
+                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" style="text-justify:auto; margin-left: 90px; font-family: 'Times New Roman', Times, serif; font-weight: bolder;">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" style="text-justify:auto; margin-left: 90px; font-family: 'Times New Roman', Times, serif; font-weight: bolder;">Location</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Location" id="autocomplete">
+            </div>
+
+            <button type="submit" href="./signup.html" class="btn btn-primary" style="text-justify:auto; margin-left: 70px; font-family: 'Times New Roman', Times, serif; font-weight: bolder;"><a class="nav-link" href="./signup.html" style="color: floralwhite;">Sign Up</a></button>
+        </form>
+
+    </div>
+
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXgsYN0C0I3i_JVUDTt097IX5iUE69ArA&libraries=places"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        var input = document.getElementById('autocomplete');
+        var autocomplete = new google.maps.places.Autocomplete(input, {
+            types: ['(cities)']
+        });
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            var place = autocomplete.getPlace();
+        })
+    </script>
+</body>
+
+</html>
